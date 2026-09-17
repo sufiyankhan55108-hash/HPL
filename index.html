@@ -5,21 +5,43 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HPL — Home Cricket League</title>
 <style>
-body{margin:0;background:#07101f;color:#f5f7fb;font-family:Arial,sans-serif}header{text-align:center;padding:32px 16px;background:linear-gradient(160deg,#17345b,#07101f)}.logo{font-size:58px;font-weight:900;letter-spacing:8px}.sub{color:#38bdf8;font-weight:bold;letter-spacing:3px}.tag{color:#aab5c8;margin-top:10px}nav{position:sticky;top:0;background:#081223;padding:10px;display:flex;gap:8px;overflow:auto}nav a{color:white;text-decoration:none;background:#14213a;padding:9px 13px;border-radius:20px;white-space:nowrap}main{max-width:1100px;margin:auto;padding:18px}section{margin:28px 0}.title{font-size:28px}.card{background:#101b30;border:1px solid #29415f;border-radius:18px;padding:18px;margin-bottom:14px}.live{border-color:#ef4444}.badge{background:#ef4444;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:bold}.score{font-size:30px;font-weight:900;margin:14px 0}.muted{color:#aab5c8}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}table{width:100%;border-collapse:collapse;background:#101b30}th,td{padding:11px;border-bottom:1px solid #29415f;text-align:center}th{color:#9fc8ff}td:first-child,th:first-child{text-align:left}.team{font-size:18px;font-weight:bold}.captain{color:#fbbf24;font-size:13px;margin-top:5px}.players{color:#c7d2e5;line-height:1.6;margin-top:9px}.result{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #29415f}.playoffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.playoff{text-align:center;background:#14213a;padding:18px;border-radius:16px}footer{text-align:center;color:#8090aa;padding:30px;border-top:1px solid #20324d}@media(max-width:600px){.logo{font-size:44px}}
+body{margin:0;background:#07101f;color:#f5f7fb;font-family:Arial,sans-serif}header{text-align:center;padding:28px 16px;background:linear-gradient(160deg,#17345b,#07101f)}.logo{font-size:54px;font-weight:900;letter-spacing:8px}.sub{color:#38bdf8;font-weight:bold;letter-spacing:3px}.tag{color:#aab5c8;margin-top:10px}nav{position:sticky;top:0;z-index:5;background:#081223;padding:10px;display:flex;gap:8px;overflow:auto}nav a{color:white;text-decoration:none;background:#14213a;padding:9px 13px;border-radius:20px;white-space:nowrap}main{max-width:1100px;margin:auto;padding:18px}section{margin:28px 0}.title{font-size:28px}.card{background:#101b30;border:1px solid #29415f;border-radius:18px;padding:18px;margin-bottom:14px}.live{border-color:#ef4444}.badge{background:#ef4444;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:bold}.score{font-size:30px;font-weight:900;margin:14px 0}.muted{color:#aab5c8}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}table{width:100%;border-collapse:collapse;background:#101b30}th,td{padding:10px;border-bottom:1px solid #29415f;text-align:center}th{color:#9fc8ff}td:first-child,th:first-child{text-align:left}.team{font-size:18px;font-weight:bold}.captain{color:#fbbf24;font-size:13px;margin-top:5px}.players{color:#c7d2e5;line-height:1.6;margin-top:9px}.result{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #29415f}.playoffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.playoff{text-align:center;background:#14213a;padding:18px;border-radius:16px}.status{display:inline-block;padding:5px 9px;border-radius:20px;background:#243653;font-size:12px;font-weight:bold}.status.live{background:#ef4444}.status.done{background:#166534}.status.paused{background:#92400e}.center{text-align:center}.admin{border-color:#7c3aed}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.controls button,.admin button{border:0;border-radius:10px;padding:12px;background:#243b5d;color:white;font-weight:bold;cursor:pointer}.controls button:hover,.admin button:hover{filter:brightness(1.15)}button.wide{grid-column:1/-1}.danger{background:#7f1d1d!important}.success{background:#166534!important}.warning{background:#92400e!important}.admin input,.admin select{width:100%;box-sizing:border-box;padding:11px;margin:5px 0 10px;border-radius:9px;border:1px solid #385170;background:#091427;color:white}.admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.hidden{display:none}.ball{display:inline-block;min-width:28px;padding:6px;margin:3px;border-radius:8px;background:#1d304d;text-align:center}.ball.wicket{background:#7f1d1d}.ball.boundary{background:#14532d}.notice{padding:12px;border-radius:10px;background:#102846;color:#cfe5ff;margin:10px 0}.small{font-size:13px}@media(max-width:600px){.logo{font-size:42px}.controls{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <header><div class="logo">HPL</div><div class="sub">HOME CRICKET LEAGUE</div><div class="tag">6 Teams • 6 Dreams • 1 League • SEASON 2</div></header>
-<nav><a href="#live">Live</a><a href="#table">Points Table</a><a href="#teams">Teams</a><a href="#caps">Caps</a><a href="#results">Results</a><a href="#playoffs">Playoffs</a></nav>
+<nav><a href="#live">Live</a><a href="#table">Points Table</a><a href="#teams">Teams</a><a href="#caps">Caps</a><a href="#results">Results</a><a href="#playoffs">Playoffs</a><a href="#admin">Admin</a></nav>
 <main>
-<section id="live"><h2 class="title">🔴 Latest Match</h2><div class="card live"><span class="badge">PAUSED — RAIN</span><h3>Eliminator — INDIA 🆚 AUSAFRICA</h3><div class="score">AUSAFRICA 72/0 (5 overs)</div><div class="muted">Travis Head 60* (18) • Mitchell Marsh 12* (12)</div></div></section>
+<section id="live"><h2 class="title">🔴 Live Match</h2><div class="card live">
+<div><span id="matchStatus" class="status paused">PAUSED — RAIN</span> <span id="syncStatus" class="status">DEMO / NOT CONNECTED</span></div>
+<h3 id="matchTitle">Qualifier 2 — SOUTHLAND 🆚 INDIA</h3>
+<div class="score" id="liveScore">INDIA — Yet to bat</div>
+<div class="muted" id="liveDetails">SOUTHLAND won toss • Dewald Brevis chose to bowl first • Pitch looking slow • Rain delay</div>
+<div id="batters"></div><div id="ballLog"></div>
+</div></section>
+
+<section id="admin"><h2 class="title">🧑‍💼 Live Scoring Admin</h2><div class="card admin">
+<div class="notice small">Use this panel from the scorer/management phone. With Firebase configured, every connected viewer receives updates automatically. Without Firebase, this page uses local demo storage on the same device/browser.</div>
+<div id="loginBox"><h3>Admin Login</h3><input id="email" type="email" placeholder="Admin email"><input id="password" type="password" placeholder="Password"><button class="wide" onclick="login()">Login</button><p id="loginMsg" class="small muted"></p></div>
+<div id="scoreBox" class="hidden">
+<div class="admin-grid">
+<div><label>Status</label><select id="statusSelect" onchange="setMatchStatus(this.value)"><option value="scheduled">Scheduled</option><option value="live">Live</option><option value="paused">Paused — Rain</option><option value="done">Completed</option></select></div>
+<div><label>Innings</label><select id="inningsSelect" onchange="setInnings(this.value)"><option value="1">1st innings — INDIA batting</option><option value="2">2nd innings — SOUTHLAND batting</option></select></div>
+<div><label>Striker</label><input id="striker" placeholder="e.g. Rohit Sharma"></div>
+<div><label>Non-striker</label><input id="nonStriker" placeholder="e.g. Shubman Gill"></div>
+</div>
+<h3>Ball-by-ball</h3><div class="controls">
+<button onclick="addBall(0)">DOT</button><button onclick="addBall(1)">1 RUN</button><button onclick="addBall(2)">2 RUNS</button><button onclick="addBall(3)">3 RUNS</button>
+<button class="success" onclick="addBall(4)">FOUR</button><button class="success" onclick="addBall(6)">SIX</button><button class="warning" onclick="addBall('wd')">WIDE</button><button class="warning" onclick="addBall('nb')">NO-BALL</button>
+<button class="danger" onclick="addBall('w')">WICKET</button><button onclick="undoBall()">UNDO</button><button class="wide" onclick="endInnings()">END INNINGS</button>
+</div>
+<div class="admin-grid" style="margin-top:14px"><div><button class="wide" onclick="startNewMatch()">Start / Reset Match</button></div><div><button class="danger wide" onclick="completeMatch()">Complete Match</button></div></div>
+<p id="adminMsg" class="small muted"></p>
+</div></div></section>
+
 <section id="table"><h2 class="title">📊 Season 2 Points Table</h2><div class="card"><table><tr><th>Pos</th><th>Team</th><th>M</th><th>W</th><th>L</th><th>Pts</th><th>NRR</th></tr>
-<tr><td>1</td><td>SOUTHLAND</td><td>5</td><td>4</td><td>1</td><td>8</td><td>+0.769</td></tr>
-<tr><td>2</td><td>INDIES</td><td>5</td><td>3</td><td>2</td><td>6</td><td>+0.357</td></tr>
-<tr><td>3</td><td>INDIA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>+0.159</td></tr>
-<tr><td>4</td><td>AUSAFRICA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>+0.063</td></tr>
-<tr><td>5</td><td>NEWZINDIA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>−0.129</td></tr>
-<tr><td>6</td><td>UNINDIA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>−1.443</td></tr></table></div></section>
+<tr><td>1</td><td>SOUTHLAND</td><td>5</td><td>4</td><td>1</td><td>8</td><td>+0.769</td></tr><tr><td>2</td><td>INDIES</td><td>5</td><td>3</td><td>2</td><td>6</td><td>+0.357</td></tr><tr><td>3</td><td>INDIA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>+0.159</td></tr><tr><td>4</td><td>AUSAFRICA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>+0.063</td></tr><tr><td>5</td><td>NEWZINDIA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>−0.129</td></tr><tr><td>6</td><td>UNINDIA</td><td>5</td><td>2</td><td>3</td><td>4</td><td>−1.443</td></tr></table></div></section>
+
 <section id="teams"><h2 class="title">👥 Teams</h2><div class="grid">
 <div class="card"><div class="team">🦁 AUSAFRICA</div><div class="captain">Captain: Ryan Rickelton</div><div class="players">Travis Head • Mitchell Marsh • Ryan Rickelton • Ishan Kishan • Nitish Kumar Reddy • Jason Holder</div></div>
 <div class="card"><div class="team">🇮🇳 INDIA</div><div class="captain">Captain: Shubman Gill</div><div class="players">Rohit Sharma • Shubman Gill • Virat Kohli • Shreyas Iyer • KL Rahul • Hardik Pandya</div></div>
@@ -31,7 +53,68 @@ body{margin:0;background:#07101f;color:#f5f7fb;font-family:Arial,sans-serif}head
 <section id="caps"><h2 class="title">🏅 HPL Leaders</h2><div class="grid"><div class="card"><h3>🟠 Orange Cap</h3><div class="score">Shubman Gill</div><div class="muted">1055 runs • Avg 47.95 • SR 267.77</div></div><div class="card"><h3>🟣 Purple Cap</h3><div class="score">Dewald Brevis</div><div class="muted">35 wickets • Best 4/14 • 72.2 overs</div></div></div></section>
 <section id="results"><h2 class="title">🏏 Season 2 Results</h2><div class="card">
 <div class="result"><span>25 Aug — INDIA vs INDIES</span><b>INDIES won</b></div><div class="result"><span>26 Aug — NEWZINDIA vs AUSAFRICA</span><b>NEWZINDIA won by 11 runs</b></div><div class="result"><span>26 Aug — SOUTHLAND vs UNINDIA</span><b>SOUTHLAND won by 2 runs</b></div><div class="result"><span>27 Aug — NEWZINDIA vs INDIA</span><b>INDIA won by 5 wickets</b></div><div class="result"><span>28 Aug — SOUTHLAND vs AUSAFRICA</span><b>AUSAFRICA won by 6 runs</b></div><div class="result"><span>28 Aug — INDIA vs UNINDIA</span><b>INDIA won by 5 wickets</b></div><div class="result"><span>28 Aug — AUSAFRICA vs INDIES</span><b>INDIES won</b></div><div class="result"><span>31 Aug — SOUTHLAND vs NEWZINDIA</span><b>SOUTHLAND won by 2 runs</b></div><div class="result"><span>1 Sep — UNINDIA vs AUSAFRICA</span><b>UNINDIA won by 10 runs</b></div><div class="result"><span>10 Sep — INDIA vs SOUTHLAND</span><b>SOUTHLAND won by 1 wicket</b></div><div class="result"><span>11 Sep — UNINDIA vs INDIES</span><b>UNINDIA won</b></div><div class="result"><span>12 Sep — INDIA vs AUSAFRICA</span><b>AUSAFRICA won by 21 runs</b></div><div class="result"><span>12 Sep — NEWZINDIA vs INDIES</span><b>INDIES won by 1 wicket</b></div><div class="result"><span>12 Sep — UNINDIA vs NEWZINDIA</span><b>NEWZINDIA won by 3 wickets</b></div><div class="result"><span>14 Sep — SOUTHLAND vs INDIES</span><b>SOUTHLAND won by 4 wickets</b></div>
-</div></section>
-<section id="playoffs"><h2 class="title">🏆 Playoffs</h2><div class="playoffs"><div class="playoff"><b>Qualifier 1</b><p>SOUTHLAND 🆚 INDIES</p><small>INDIES → FINAL<br>SOUTHLAND → Q2</small></div><div class="playoff"><b>Eliminator</b><p>INDIA 🆚 AUSAFRICA</p><small>Winner → Q2<br>Loser → OUT</small></div><div class="playoff"><b>Qualifier 2</b><p>Q1 Loser 🆚 Eliminator Winner</p><small>Winner → FINAL</small></div><div class="playoff"><b>FINAL</b><p>INDIES 🆚 Q2 Winner</p><small>🏆 SEASON 2 CHAMPION</small></div></div></section>
+<div class="result"><span>Eliminator — INDIA vs AUSAFRICA</span><b>INDIA won by 3 wickets</b></div></div></section>
+<section id="playoffs"><h2 class="title">🏆 Playoffs</h2><div class="playoffs"><div class="playoff"><b>Qualifier 1</b><p>SOUTHLAND 🆚 INDIES</p><small>INDIES → FINAL<br>SOUTHLAND → Q2</small></div><div class="playoff"><b>Eliminator</b><p>INDIA 🆚 AUSAFRICA</p><small>INDIA → Q2<br>AUSAFRICA → OUT</small></div><div class="playoff"><b>Qualifier 2</b><p>SOUTHLAND 🆚 INDIA</p><small>Winner → FINAL</small></div><div class="playoff"><b>FINAL</b><p>INDIES 🆚 Q2 Winner</p><small>🏆 SEASON 2 CHAMPION</small></div></div></section>
 </main><footer>HPL — Where Every Match Tells a Story 🏏</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+const firebaseConfig={apiKey:"AIzaSyDU2BGtpIhRiyjdtYf_m-CXLZUzwFm5nlQ",authDomain:"hpl-cricket-2f077.firebaseapp.com",databaseURL:"https://hpl-cricket-2f077-default-rtdb.firebaseio.com",projectId:"hpl-cricket-2f077",storageBucket:"hpl-cricket-2f077.firebasestorage.app",messagingSenderId:"259241996251",appId:"1:259241996251:web:995305ee7f7ae5378a81fe"};
+const configured=!Object.values(firebaseConfig).some(v=>String(v).includes("YOUR_"));
+let app,auth,db,liveRef,currentUser=null;
+const demoKey="hplLiveMatchDemo";
+const defaultMatch={matchTitle:"Qualifier 2 — SOUTHLAND 🆚 INDIA",status:"paused",statusLabel:"PAUSED — RAIN",innings:1,runs:0,wickets:0,balls:0,striker:"Rohit Sharma",nonStriker:"Shubman Gill",details:"SOUTHLAND won toss • Dewald Brevis chose to bowl first • Pitch looking slow • Rain delay",ballLog:[],history:[]};
+let match=loadDemo();
+
+function loadDemo(){try{return JSON.parse(localStorage.getItem(demoKey))||structuredClone(defaultMatch)}catch{return structuredClone(defaultMatch)}}
+function saveDemo(){localStorage.setItem(demoKey,JSON.stringify(match))}
+function saveMatch(){if(configured&&currentUser){set(liveRef,match).catch(e=>msg("Firebase write failed: "+e.message,true))}else saveDemo();render()}
+function msg(t,err=false){const e=document.getElementById("adminMsg");if(e){e.textContent=t;e.style.color=err?"#fca5a5":"#aab5c8"}}
+function render(){
+ document.getElementById("matchTitle").textContent=match.matchTitle;
+ const st=document.getElementById("matchStatus");st.textContent=match.statusLabel||match.status.toUpperCase();st.className="status "+match.status;
+ document.getElementById("syncStatus").textContent=configured?"FIREBASE REALTIME":"DEMO / NOT CONNECTED";
+ document.getElementById("syncStatus").className="status"+(configured?" done":"");
+ const batting=match.innings===1?"INDIA":"SOUTHLAND";
+ document.getElementById("liveScore").textContent=match.status==="scheduled"?batting+" — Yet to bat":`${batting} ${match.runs}/${match.wickets} (${Math.floor(match.balls/6)}.${match.balls%6} overs)`;
+ document.getElementById("liveDetails").textContent=match.details||"";
+ document.getElementById("batters").innerHTML=match.striker?`<div class="muted">🏏 ${match.striker}* • ${match.nonStriker||""}</div>`:"";
+ document.getElementById("ballLog").innerHTML=(match.ballLog||[]).slice(-18).map(x=>`<span class="ball ${x===4||x===6?'boundary':x==='W'?'wicket':''}">${x}</span>`).join("");
+ document.getElementById("statusSelect").value=match.status;document.getElementById("inningsSelect").value=String(match.innings);
+ document.getElementById("striker").value=match.striker||"";document.getElementById("nonStriker").value=match.nonStriker||"";
+}
+window.login=async function(){
+ const email=document.getElementById("email").value,password=document.getElementById("password").value;
+ if(!configured){document.getElementById("loginBox").classList.add("hidden");document.getElementById("scoreBox").classList.remove("hidden");msg("Demo mode: Firebase config is not inserted yet.");return}
+ try{await signInWithEmailAndPassword(auth,email,password)}catch(e){document.getElementById("loginMsg").textContent=e.message}
+};
+window.setMatchStatus=function(v){match.status=v;match.statusLabel=v==="paused"?"PAUSED — RAIN":v.toUpperCase();saveMatch()};
+window.setInnings=function(v){match.innings=Number(v);match.runs=0;match.wickets=0;match.balls=0;match.ballLog=[];match.details=v==="1"?"INDIA batting first":"SOUTHLAND batting second";saveMatch()};
+window.addBall=function(type){
+ if(match.status!=="live"){msg("Set match status to LIVE before adding a ball.",true);return}
+ const snapshot=JSON.parse(JSON.stringify(match));match.history=match.history||[];match.history.push(snapshot);
+ if(type==='wd'){match.runs+=1;match.ballLog.push('WD')}
+ else if(type==='nb'){match.runs+=1;match.ballLog.push('NB')}
+ else if(type==='w'){match.wickets+=1;match.balls+=1;match.ballLog.push('W')}
+ else {match.runs+=Number(type);match.balls+=1;match.ballLog.push(Number(type));}
+ match.striker=document.getElementById("striker").value;match.nonStriker=document.getElementById("nonStriker").value;saveMatch();
+};
+window.undoBall=function(){if(!(match.history||[]).length){msg("Nothing to undo.",true);return}match=match.history.pop();saveMatch()};
+window.endInnings=function(){match.status="paused";match.statusLabel="INNINGS BREAK";saveMatch();msg("Innings ended. Select the next innings when ready.")};
+window.completeMatch=function(){match.status="done";match.statusLabel="COMPLETED";saveMatch();msg("Match marked completed.")};
+window.startNewMatch=function(){match=structuredClone(defaultMatch);match.status="scheduled";match.statusLabel="SCHEDULED";saveMatch();msg("Match reset for a new live scoring session.")};
+
+document.getElementById("striker").addEventListener("input",e=>{match.striker=e.target.value});
+document.getElementById("nonStriker").addEventListener("input",e=>{match.nonStriker=e.target.value});
+
+if(configured){
+ app=initializeApp(firebaseConfig);auth=getAuth(app);db=getDatabase(app);liveRef=ref(db,"hpl/liveMatch");
+ onAuthStateChanged(auth,u=>{currentUser=u;if(u){document.getElementById("loginBox").classList.add("hidden");document.getElementById("scoreBox").classList.remove("hidden")}else{document.getElementById("scoreBox").classList.add("hidden");document.getElementById("loginBox").classList.remove("hidden")}});
+ onValue(liveRef,s=>{if(s.exists()){match=s.val();render()}});
+}
+render();
+</script>
 </body></html>
